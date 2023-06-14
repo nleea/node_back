@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+import cors from "cors";
 import { Routes } from "./routes"
 
 export class Init {
@@ -17,10 +18,11 @@ export class Init {
     middleware() {
         this.#app.use(express.json());
         this.#app.use(express.urlencoded({ extended: true }))
+        this.#app.use(cors())
     }
 
     routes() {
-        this.#app.use("/productos",this.routes_.index())
+        this.#app.use("/productos", this.routes_.index())
     }
 
     server() {
