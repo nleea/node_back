@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { CancionService } from "../services/cancion";
+import {  AutorService} from "../services/autor";
 import { Autor } from "../models/tipos";
 
 export class CancionControlador {
 
-    services: CancionService = new CancionService();
+    services: AutorService = new AutorService();
 
     create = async (req: Request, res: Response) => {
 

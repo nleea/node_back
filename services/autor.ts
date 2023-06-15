@@ -1,7 +1,7 @@
 import { autor_Lbermudez } from "../models/Autor_Lbermudez";
-import { UserModels } from "../models/tipos";
+import { Autor } from "../models/tipos";
 
-export class CancionService {
+export class AutorService {
 
     models: typeof autor_Lbermudez;
 
@@ -9,7 +9,7 @@ export class CancionService {
         this.models = autor_Lbermudez;
     }
 
-    async create(body: UserModels) {
+    async create(body: Autor) {
 
         try {
             await this.models.create({ ...body });
@@ -29,7 +29,7 @@ export class CancionService {
         }
     }
 
-    async update(id: string, body: UserModels) {
+    async update(id: string, body: Autor) {
         try {
             await this.models.update({ ...body }, { where: { id: Number(id) } })
             return { "data": "Ok" }

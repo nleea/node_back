@@ -1,5 +1,5 @@
 import { cancion_Lbermudez } from "../models/Cancion_Lbermudez";
-import { UserModels } from "../models/tipos";
+import { Cancion } from "../models/tipos";
 
 export class CancionService {
 
@@ -9,7 +9,7 @@ export class CancionService {
         this.models = cancion_Lbermudez;
     }
 
-    async create(body: UserModels) {
+    async create(body: Cancion) {
 
         try {
             await this.models.create({ ...body });
@@ -29,7 +29,7 @@ export class CancionService {
         }
     }
 
-    async update(id: string, body: UserModels) {
+    async update(id: string, body: Cancion) {
         try {
             await this.models.update({ ...body }, { where: { id: Number(id) } })
             return { "data": "Ok" }
