@@ -3,7 +3,7 @@ const sequelize = new Sequelize("p2", "root", "", { host: "localhost", dialect: 
 
 const User = sequelize.define('User', {
 
-    nonbre: {
+    nombre: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -20,7 +20,8 @@ const User = sequelize.define('User', {
         allowNull: false
     }
 }, {
-    modelName: "User"
+    modelName: "User",
+    timestamps:false
 });
 
 sequelize.sync({alter:true})

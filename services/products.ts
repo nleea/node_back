@@ -3,10 +3,12 @@ import { UserModels } from "../models/User";
 
 export class ProductService {
     async create(body: UserModels) {
+        console.log(body)
         try {
             await User.create({ ...body });
             return { "message": "Ok" }
         } catch (error) {
+            console.log(error)
             return { "message": error }
         }
     }
