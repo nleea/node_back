@@ -10,8 +10,6 @@ export class AutorControlador {
 
         const body = req.body as Autor;
 
-        console.log(body)
-
         const response = this.services.create(body)
 
         return res.status(200).json(response)
