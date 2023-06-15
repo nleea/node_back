@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CancionService } from "../services/cancion";
-import { UserModels } from "../models/User";
+import { Cancion } from "../models/tipos";
 
 export class CancionControlador {
 
@@ -8,7 +8,7 @@ export class CancionControlador {
 
     create = async (req: Request, res: Response) => {
 
-        const body = req.body as UserModels;
+        const body = req.body as Cancion;
 
         const response = this.services.create(body)
 
@@ -24,7 +24,7 @@ export class CancionControlador {
 
     updateData = async (req: Request, res: Response) => {
 
-        const body = req.body as UserModels;
+        const body = req.body as Cancion;
         const {id} = req.params;
 
         const response = this.services.update(id,body)

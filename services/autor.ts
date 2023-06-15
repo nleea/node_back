@@ -1,5 +1,5 @@
 import { autor_Lbermudez } from "../models/Autor_Lbermudez";
-import { UserModels } from "../models/User";
+import { UserModels } from "../models/tipos";
 
 export class CancionService {
 
