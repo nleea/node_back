@@ -7,7 +7,7 @@ export class Routes {
     index = () => {
         const route = Router();
         route.use("/mostrar", this.product.findAll)
-        route.use("/crear", this.product.create)
+        route.post("/crear", this.product.create)
         route.use("/editar/:id", this.product.updateData)
         route.use("/eliminar/:id", this.product.deleteData)
         return route

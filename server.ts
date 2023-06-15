@@ -22,7 +22,7 @@ export class Init {
     }
 
     routes() {
-        this.#app.use("/productos", this.routes_.index())
+        this.#app.use("/", this.routes_.index())
     }
 
     server() {
