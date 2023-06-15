@@ -1,11 +1,18 @@
-import { User } from "../models";
+import { autor_Lbermudez } from "../models/Autor_Lbermudez";
 import { UserModels } from "../models/User";
 
-export class ProductService {
+export class CancionService {
+
+    models: typeof autor_Lbermudez;
+
+    constructor() {
+        this.models = autor_Lbermudez;
+    }
+
     async create(body: UserModels) {
-        console.log(body)
+
         try {
-            await User.create({ ...body });
+            await this.models.create({ ...body });
             return { "message": "Ok" }
         } catch (error) {
             console.log(error)
@@ -15,7 +22,7 @@ export class ProductService {
 
     async findAll() {
         try {
-            const resulst = await User.findAll()
+            const resulst = await this.models.findAll()
             return { "data": resulst }
         } catch (error) {
             return { "message": error }
@@ -24,7 +31,7 @@ export class ProductService {
 
     async update(id: string, body: UserModels) {
         try {
-            await User.update({ ...body }, { where: { id: Number(id) } })
+            await this.models.update({ ...body }, { where: { id: Number(id) } })
             return { "data": "Ok" }
         } catch (error) {
             return { "message": error }
@@ -33,7 +40,7 @@ export class ProductService {
 
     async delete(id: string) {
         try {
-            await User.destroy({ where: { id: Number(id) } })
+            await this.models.destroy({ where: { id: Number(id) } })
             return { "data": "Ok" }
         } catch (error) {
             return { "message": error }

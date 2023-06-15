@@ -1,29 +1,25 @@
 import { Sequelize, DataTypes } from "sequelize";
 const sequelize = new Sequelize("p2", "root", "", { host: "localhost", dialect: "mysql" });
 
-const User = sequelize.define('User', {
+const autor_Lbermudez = sequelize.define('autor_Lbermudez', {
 
     nombre: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    apellido: {
+    sexo: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    telefono: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    direccion: {
+    nacionalidad: {
         type: DataTypes.STRING,
         allowNull: false
     }
 }, {
-    modelName: "User",
-    timestamps:false
+    modelName: "autor_Lbermudez",
+    timestamps: false
 });
 
-sequelize.sync({alter:true})
+sequelize.sync({ alter: true })
 
-export { User }
+export { autor_Lbermudez }
