@@ -15,10 +15,6 @@ const cancion_Lbermudez = sequelize.define('cancion_Lbermudez', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    direccion: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
     autorId: {
         type: DataTypes.INTEGER,
         allowNull: true
