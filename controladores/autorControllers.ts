@@ -2,13 +2,15 @@ import { Request, Response } from "express";
 import {  AutorService} from "../services/autor";
 import { Autor } from "../models/tipos";
 
-export class CancionControlador {
+export class AutorControlador {
 
     services: AutorService = new AutorService();
 
     create = async (req: Request, res: Response) => {
 
         const body = req.body as Autor;
+
+        console.log(body)
 
         const response = this.services.create(body)
 

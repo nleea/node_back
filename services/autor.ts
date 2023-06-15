@@ -15,7 +15,7 @@ export class AutorService {
             await this.models.create({ ...body });
             return { "message": "Ok" }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             return { "message": error }
         }
     }
