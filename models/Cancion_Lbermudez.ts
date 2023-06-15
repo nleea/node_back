@@ -17,7 +17,11 @@ const cancion_Lbermudez = sequelize.define('cancion_Lbermudez', {
     },
     autorId: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: true,
+        references:{
+            model: autor_Lbermudez,
+            key:"id"
+        }
     }
 }, {
     modelName: "cancion_Lbermudez",
